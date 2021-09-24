@@ -182,4 +182,7 @@ buildNumber.properties
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
+*.pem
+.idea/**
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij,maven,macos
+/.idea/
