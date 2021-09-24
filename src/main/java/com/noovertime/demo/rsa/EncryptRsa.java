@@ -57,7 +57,7 @@ public class EncryptRsa {
 		byte[] priBytes = enPriInfo.getEncoded();
 
 		// 확인용
-		Utils.log( publicKey );
+//		Utils.log( publicKey );
 
 
 		// 파일로 출력

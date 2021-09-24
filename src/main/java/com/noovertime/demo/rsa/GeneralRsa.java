@@ -3,7 +3,6 @@ package com.noovertime.demo.rsa;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.crypto.Cipher;
-import javax.crypto.spec.PBEKeySpec;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
@@ -34,22 +33,22 @@ public class GeneralRsa {
 //				new BigInteger("18880040408878474925194433633143741098009491583122801467415871340389329596786303677475867551036416110082462043325305181821226092403473667554802862496371015124459397553174226703248073838693582288017798714836252638704062561944492166655644138324749037760163940041058703601095601460828704464036213465425959109701787207810253289206205489640305813454294489866238976441502776507751476581040612820742392745150037043125689283888778320032817177796984533833521994265752751098764971819663809956984119464648516012645292561942707157912846280436687316439536816972098880484924994489057888570339076951885707950987258103713021886745279"),
 //				new BigInteger("65537"));
 		// Only RSAPublicKeySpec and X509EncodedKeySpec supported for RSA public keys
-		PublicKey publicKey = keyFactory.generatePublic( pubKeySpec);
+		PublicKey publicKey = keyFactory.generatePublic(pubKeySpec);
 
 
 		// privateKey
-		PKCS8EncodedKeySpec priKeySpec = new PKCS8EncodedKeySpec( keyPair.getPrivate().getEncoded());
-		PrivateKey privateKey = keyFactory.generatePrivate( priKeySpec);
+		PKCS8EncodedKeySpec priKeySpec = new PKCS8EncodedKeySpec(keyPair.getPrivate().getEncoded());
+		PrivateKey privateKey = keyFactory.generatePrivate(priKeySpec);
 
 
 		// 확인용
-		Utils.log( publicKey );
-		Utils.log( privateKey );
+//		Utils.log( publicKey );
+//		Utils.log( privateKey );
 
 
 		// 파일로 출력
-		Utils.saveBase64Encode( "PUBLIC", Path.of( Constant.GENERAL_RSA_PUBLIC_FILE), publicKey.getEncoded());
-		Utils.saveBase64Encode( "PRIVATE", Path.of( Constant.GENERAL_RSA_PRIVATE_FILE), privateKey.getEncoded());
+		Utils.saveBase64Encode("PUBLIC", Path.of(Constant.GENERAL_RSA_PUBLIC_FILE), publicKey.getEncoded());
+		Utils.saveBase64Encode("PRIVATE", Path.of(Constant.GENERAL_RSA_PRIVATE_FILE), privateKey.getEncoded());
 	}
 
 	/**
